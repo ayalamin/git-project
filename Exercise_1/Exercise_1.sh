@@ -36,21 +36,30 @@ for ((i = 2; i <= $#; i++)); do
     fi
 done
 
-
+if [ -d downloads/ ]; then
+      echo "Do you want to replace the directory 'downloads' (Y/N)"
+      read ans
+      if [ "$ans" == "Y" ]; then
+         rm -r downloads/
+      else 
+        exit -1
+      fi
+fi
 mkdir downloads/
 cd downloads/
 
-
 for ((i = 2; i <= $#; i++)); do
-    url="${!i}"
+url="${!i}"
     if ! wget "$url"; then
         echo "Error: Invalid URL $url."
     fi
 done
 
+cd ..
+
 zip -r downloads downloads/
 
-mv downloads/ $direction
+mv downloads.zip $direction
 
 
 
