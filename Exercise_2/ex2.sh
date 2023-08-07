@@ -17,4 +17,9 @@ read -ra text_file < "$text_file"
 divide_separate "$text_file"
 IFS="$oldIFS" 
 }
+if [ $# -ne 2 ]; then
+    echo "Usage: $0 <separator> <name_of_file>"
+    exit 1
+fi
+
 main "$1" "$2"
