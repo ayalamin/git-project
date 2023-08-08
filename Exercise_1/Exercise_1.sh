@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #check if input is a url
 is_url() {
     input="$1"
@@ -35,34 +36,30 @@ for ((i = 2; i <= $#; i++)); do
     fi
 done
 
-
-
+if [ -d downloads/ ]; then
+      echo "Do you want to replace the directory 'downloads' (Y/N)"
+      read ans
+      if [ "$ans" == "Y" ]; then
+         rm -r downloads/
+      else 
+        exit -1
+      fi
+fi
 mkdir downloads/
 cd downloads/
 
 for ((i = 2; i <= $#; i++)); do
 url="${!i}"
-   wget --no-check-certificate -P downloads/ "$url"
+    if ! wget --no-check-certificate -P . "$url"; then
+        echo "Error: Invalid URL $url."
+    fi
 done
 
 cd ..
-downloads_zip="downloads_$(date +%Y-%m-%d)"
 
-zip -r $downloads_zip downloads/
+zip -r downloads downloads/
 
-current=$(pwd)  # Store the current directory
+mv downloads.zip $direction
 
-cd "$directory"  # Change to the specified directory
 
-if [ -d "downloads" ]; then
-    # Make sure destination and source directories are distinct
-    if [ "$current" != "$(pwd)" ]; then
-        mv "$current"/downloads/* downloads/
-        cd "$current"
-        rm -r downloads 
-    fi
-else 
-    cd "$current"
-    mv downloads "$directory"
-fi
 
