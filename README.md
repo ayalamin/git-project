@@ -12,12 +12,12 @@ Written by Rachel Feld.
 
 Task-2:
 This script reads a file and a desired separator, then iterates through the file lines, printing fields separated by the specified separator.
-Written by Ayala Min-Har
+Written by Ayala Min-Hahar
 (To call it press 2)
 
 Task-3:
 This script reads numbers between 1 and 10 from the user and prints the corresponding numeric words along with the frequency of their appearance.
-Written by Ayala Min-Har
+Written by Ayala Min-Hahar
 (To call it press 3)
 
 Task-4:
@@ -44,5 +44,5 @@ Each script is designed to handle user input effectively and provide the desired
 If you have any questions or need further assistance, please refer contact the repository owner.
 Thanks!
 
-The repository's owner: Ayala Min-Har
-The Team members: Ayala Min-Har, Miryam Goldin, Noa Abecassis and Rachel Feld.
+The repository's owner: Ayala Min-Hahar
+The Team members: Ayala Min-Hahar, Miryam Goldin, Noa Abecassis and Rachel Feld.
