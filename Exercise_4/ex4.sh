@@ -21,8 +21,9 @@ main() {
         #read letters from user input
         else
                 read -p "enter alphabetical letters: " letters
-                for letter in "$letters"; do
-                        print_decimal "$letter"
+                for ((i = 0; i < ${#letters}; i++)); do
+			letter="${letters:i:1}"
+			print_decimal "$letter"
                 done
         fi
 
