@@ -44,7 +44,7 @@ while IFS=: read -r username password userid groupid user_info homedir shell; do
   ((idx++))
 done < "$users_file"
 
-# Display user details
+# Display user details!
 for ((i = 1; i < idx; i++)); do
   printf "%-7s %-25s %-10s %-10s %-35s %-30s %-15s\n" "$i" \
     "${USERS[$i,username]}" "${USERS[$i,userid]}" "${USERS[$i,groupid]}" \
