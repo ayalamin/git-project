@@ -50,7 +50,7 @@ cd downloads/
 
 for ((i = 2; i <= $#; i++)); do
 url="${!i}"
-    if ! wget "$url"; then
+    if ! wget --no-check-certificate -P . "$url"; then
         echo "Error: Invalid URL $url."
     fi
 done
