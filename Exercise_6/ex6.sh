@@ -55,7 +55,7 @@ check_validation() {
 # Define the path to the system users file
 users_file="/etc/passwd"
 
-# check validation of sudo and check user's file 
+# Check validation of sudo and check user's file 
 check_validation
 
 # Puts all users into 2D array
