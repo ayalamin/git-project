@@ -3,9 +3,11 @@
 # the function print decimal value of a letter
 print_decimal() {
         local letter="$1"
+        if [ -z "$letter" ] || [ ! "$letter" = " " ]; then
         local decimal=$(printf '%d' "'$letter")
         echo "$letter = $decimal"
         sum=$((sum + decimal))
+        fi
 }
 
 main() {
